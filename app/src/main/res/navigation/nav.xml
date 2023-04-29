@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/dashBoard">
+
+    <fragment
+        android:id="@+id/addUser"
+        android:name="com.example.bcandroiddeveloper.AddUser"
+        android:label="fragment_add_user"
+        tools:layout="@layout/fragment_add_user" >
+        <action
+            android:id="@+id/action_addUser_to_userConfig"
+            app:destination="@id/userConfig" />
+        <action
+            android:id="@+id/action_addUser_to_dashBoard"
+            app:destination="@id/dashBoard" />
+    </fragment>
+    <fragment
+        android:id="@+id/listUser"
+        android:name="com.example.bcandroiddeveloper.ListUser"
+        android:label="fragment_list_user"
+        tools:layout="@layout/fragment_list_user" >
+        <action
+            android:id="@+id/action_listUser_to_dashBoard"
+            app:destination="@id/dashBoard" />
+    </fragment>
+    <fragment
+        android:id="@+id/dashBoard"
+        android:name="com.example.bcandroiddeveloper.DashBoard"
+        android:label="fragment_dash_board"
+        tools:layout="@layout/fragment_dash_board" >
+        <action
+            android:id="@+id/action_dashBoard_to_listUser"
+            app:destination="@id/listUser" />
+        <action
+            android:id="@+id/action_dashBoard_to_addUser"
+            app:destination="@id/addUser" />
+        <action
+            android:id="@+id/action_dashBoard_to_userConfig"
+            app:destination="@id/userConfig" />
+    </fragment>
+    <fragment
+        android:id="@+id/userConfig"
+        android:name="com.example.bcandroiddeveloper.UserConfig"
+        android:label="fragment_user_config"
+        tools:layout="@layout/fragment_user_config" >
+        <action
+            android:id="@+id/action_userConfig_to_addUser"
+            app:destination="@id/addUser" />
+    </fragment>
+</navigation>
